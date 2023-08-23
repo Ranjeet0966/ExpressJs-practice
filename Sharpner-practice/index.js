@@ -17,17 +17,17 @@ index.use('/Add-product',(req,res,next)=>{
     res.redirect('/');
  });
 
-/*index.use((req,res,next)=>{
+index.use((req,res,next)=>{
     console.log('In the middleware');
     next();//Allows the request to continue to the next middleware 
-})*/
+})
 
 index.use('/',(req,res,next)=>{
    // console.log('In another middleware');
     res.send('<h1>Welcome to our country</h1>');
 })
 
-
+index.use(adminRoutes);
 
 const server = http.createServer(index);
 
