@@ -7,13 +7,22 @@ let password='Ganguly@123';
 
 // app.get(route,callback(req,res)) that is a syntax of .get method
 app.get("/",(req,res)=>{
-    res.send("<h1>This is login page</h1>");
-
+   // res.send("<h1>This is login page</h1>");
+   res.write("<h1>This is login page</h1>");
+   res.write("<h1>This is login page 2</h1>");
+   res.send();
 });
 app.use(loginMiddleware);
 
 app.get('/name',(req,res)=>{
-    res.send("Welcome to our country.")
+    res.json([{
+         firstName : 'Ranjeet',
+        lastName : 'Yadav'
+    },
+    {
+        firstName : 'Sumit',
+        lastName : 'Yadav'
+    }])
 
 })
 
