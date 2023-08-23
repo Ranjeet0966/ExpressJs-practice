@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require('path');
 const app = express();
-
+//following are use for connect html,css and js file
 const staticPath=path.join(__dirname,'../ytpublic')
 
 console.log(__dirname);
