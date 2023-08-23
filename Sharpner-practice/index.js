@@ -5,7 +5,12 @@ const express = require('express');
 //const { create } = require('domain');
 const index= express();
 
+
+
+
 index.use(bodyParser.urlencoded({extended: false}));
+
+
 
 index.use('/Add-product',(req,res,next)=>{
     //console.log('In another middleware');
@@ -27,7 +32,6 @@ index.use('/',(req,res,next)=>{
     res.send('<h1>Welcome to our country</h1>');
 })
 
-index.use(adminRoutes);
 
 const server = http.createServer(index);
 
