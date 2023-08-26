@@ -1,8 +1,8 @@
 const path=require('path');
-
+const express = require('express');
 const bodyParser=require('body-parser');
 
-const express = require('express');
+
 //const { create } = require('domain');
 const app= express();
 
@@ -14,11 +14,12 @@ const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(shopRoutes);
-app.use('/admin',adminRoutes);
 
+app.use('/admin',adminRoutes);
+app.use(shopRoutes);
 
 app.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,'404.html'));
+    res.status(404).sendFile(path.join(__dirname,'view','404.html'));
 })
-app.listen(3001);
+
+app.listen(3002);
