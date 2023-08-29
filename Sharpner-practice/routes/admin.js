@@ -16,7 +16,7 @@ const router = express.Router();
     //res.sendFile(path.join(rootDir,'view','add-product.html'))
 })*/
 
-router.get('add-product', productController.getAddProduct);
+router.get('/add-product', productController.getAddProduct);
 
  // /admin/Add-product => POST
  /*router.post('/add-product',(req,res,next)=>{
