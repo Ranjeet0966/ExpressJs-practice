@@ -97,5 +97,3 @@ module.exports = class Product {
     getProductsFromFile(cb);
   }
 };
-
-
